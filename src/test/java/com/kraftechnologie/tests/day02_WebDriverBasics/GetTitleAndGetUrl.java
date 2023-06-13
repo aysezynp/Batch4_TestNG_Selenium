@@ -1,4 +1,4 @@
-package com.kraftechnologie.tests.day02;
+package com.kraftechnologie.tests.day02_WebDriverBasics;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
