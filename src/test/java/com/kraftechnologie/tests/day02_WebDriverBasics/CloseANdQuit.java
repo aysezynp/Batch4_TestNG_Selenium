@@ -1,5 +1,6 @@
 package com.kraftechnologie.tests.day02_WebDriverBasics;
 
+import com.kraftechnologie.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -32,7 +33,33 @@ public class CloseANdQuit {
         //close all the tabs
         driver1.quit();
 
-
-
     }
 }
+
+        class closeExeptionTest {
+            public static void main(String[] args) throws InterruptedException {
+                //added in day 4 class
+                WebDriver driver = WebDriverFactory.getDriver("chrome");
+
+                driver.get("https://www.google.com/");
+
+                Thread.sleep(2000);
+
+                //close current tab
+                driver.close();
+
+                //giving new browser tab
+                driver=new ChromeDriver(); // if we don't give -> invalid session ID Exception
+                driver.get("https://www.facebook.com/");
+
+            }
+
+
+        }
+
+
+
+
+
+
+
