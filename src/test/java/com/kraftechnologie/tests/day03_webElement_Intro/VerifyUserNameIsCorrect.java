@@ -24,19 +24,19 @@ public class VerifyUserNameIsCorrect {
         WebDriver driver= WebDriverFactory.getDriver("chrome");
         driver.get("https://www.krafttechexlab.com/login");
 
-        //enter e mail
+        //enter e mail by lazy way
         driver.findElement(By.id("email")).sendKeys(email);
 
-        //enter password
+        //enter password by lazy way
         driver.findElement(By.id("yourPassword")).sendKeys(password);
 
         //click login btn
         driver.findElement(By.cssSelector("[type=\"submit\"]")).click();
 
        WebElement profilUserName=driver.findElement(By.cssSelector("[class=\"d-none d-md-block dropdown-toggle ps-2\"]"));
-       //2 ways to get text from web element
-      //  1.getText() >> it will work %99 , it will return string
-     //   2. get
+        //2 ways to get text from web element
+        //1. getText() -> it will work %99 , it will return string
+        //2. getAttribute("") --> second way of getting text especially
 
 
         String actualprofilUserName=profilUserName.getText();

@@ -25,5 +25,7 @@ public class NameDublicateTest {
         System.out.println("driver.findElement(By.name(\"itemParentCat\")).getText() = " + driver.findElement(By.name("itemParentCat")).getText());
         Thread.sleep(3000);
         driver.close();
+
+        driver.findElement(By.id("btnCookie")).click();
     }
 }
