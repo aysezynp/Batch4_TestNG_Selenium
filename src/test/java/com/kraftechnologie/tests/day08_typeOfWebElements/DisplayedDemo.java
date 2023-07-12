@@ -30,7 +30,7 @@ public class DisplayedDemo {
         driver.close();
     }
     @Test
-    public void displayedTest2(){
+    public void displayedTest2() throws InterruptedException {
         /**  HOME TASK
          https://the-internet.herokuapp.com/dynamic_loading
          Example 2: Element rendered after the fact -->click
@@ -43,12 +43,25 @@ public class DisplayedDemo {
 
         WebDriver driver= WebDriverFactory.getDriver("chrome");
         driver.get("https://the-internet.herokuapp.com/dynamic_loading");
+
         WebElement example2=driver.findElement(By.linkText("Example 2: Element rendered after the fact"));
         example2.click();
 
+        WebElement hello=driver.findElement(By.xpath("//div[@id='content']/script"));
+        //System.out.println("hello.isDisplayed() = " + hello.isDisplayed());
+        Assert.assertFalse(hello.isDisplayed(),"Verify that \"Hello World\" is NOT displayed");
+        System.out.println("hello.getText() = " + hello.getText());
+
         WebElement startBtn= driver.findElement(By.xpath("//button[text()='Start']"));
-
         startBtn.click();
+        Thread.sleep(5000);
 
+        WebElement helloAfterClick=driver.findElement(By.xpath("//h4[text()='Hello World!']"));
+        Assert.assertTrue(helloAfterClick.isDisplayed(),"Verify that \"Hello World\" is displayed");
+        System.out.println("helloAfterClick.getText() = " + helloAfterClick.getText());
+        Assert.assertEquals(helloAfterClick.getText(),"Hello World!");
+
+        Thread.sleep(2000);
+        driver.close();
     }
 }

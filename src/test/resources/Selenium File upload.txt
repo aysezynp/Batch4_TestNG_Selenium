@@ -1,0 +1,6 @@
+Hello World!
+
+
+Sdet class is here
+
+C:\Users\asus\IdeaProjects\Batch4_TestNG_Selenium/src/test/resources/Selenium File upload.txt
