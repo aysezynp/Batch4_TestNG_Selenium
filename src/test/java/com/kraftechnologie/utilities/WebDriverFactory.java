@@ -24,6 +24,7 @@ public class WebDriverFactory {
              driver=new ChromeDriver();
              driver.manage().window().maximize();
              break;
+
          case "firefoxdriver":
              WebDriverManager.firefoxdriver().setup();
              driver=new FirefoxDriver();

@@ -31,4 +31,5 @@ public class NewWebTables {
         WebElement table = driver.findElement(By.xpath("//table[@id='t01']"));//locate the whole table
         System.out.println("table.getText() = " + table.getText());
     }
+    
 }

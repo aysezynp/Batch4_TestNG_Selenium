@@ -101,7 +101,6 @@ public class WebTables {
         //we would like to write a code that it will print all cells one by one
         int rowNumber=getNumberOfRows();
         int columnNumber=getNumberColumns();
-
         for (int i = 1; i <=rowNumber ; i++) {
             for (int j = 1; j <= columnNumber; j++) {
                WebElement element = driver.findElement(By.xpath("(//table[@id='t01']//td/..)[" + i + "]/td[" + j + "]"));

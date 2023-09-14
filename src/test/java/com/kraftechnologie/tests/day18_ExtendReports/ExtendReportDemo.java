@@ -7,10 +7,11 @@ import com.kraftechnologie.utilities.ConfigurationReader;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 public class ExtendReportDemo {
     // this class is used for starting and building reports
     ExtentReports report;
-    //this class is esud to create html report file
+    //this class is used to create html report file
     ExtentHtmlReporter htmlReporter;
     //this will define a test, enable adding logs, authors and test steps
     ExtentTest extentLogger;

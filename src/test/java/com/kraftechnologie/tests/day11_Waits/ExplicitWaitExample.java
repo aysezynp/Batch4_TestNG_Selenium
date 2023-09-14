@@ -12,6 +12,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class ExplicitWaitExample {
@@ -22,7 +23,7 @@ public class ExplicitWaitExample {
     public void setUp() throws InterruptedException {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        wait=new WebDriverWait(driver,15);
+        wait=new WebDriverWait(driver, Duration.ofSeconds(15));
 
     }
 
@@ -49,7 +50,7 @@ public class ExplicitWaitExample {
     public void explicitWaitTest2(){
     driver.get("https://the-internet.herokuapp.com/dynamic_controls");
     driver.findElement(By.xpath("//button[text()='Enable']")).click();
-    WebDriverWait wait = new WebDriverWait(driver, 15);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     // driver.findElement(By.cssSelector("input[type=\"text\"]")).sendKeys("Batch4 is here");
 
     WebElement inputBox = driver.findElement(By.cssSelector("input[type=\"text\"]"));

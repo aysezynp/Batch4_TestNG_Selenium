@@ -41,6 +41,7 @@ public class JavaScriptExeccutorDemo {
         executor.executeScript("arguments[0].click();", germany);
         driver.findElement(By.id("sp-cc-accept")).click();
 
+
     }
 
     @Test
@@ -53,7 +54,6 @@ public class JavaScriptExeccutorDemo {
         Thread.sleep(2000);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("arguments[0].setAttribute('value', '" + text +"')",enableBox);
-
 
     }
 
